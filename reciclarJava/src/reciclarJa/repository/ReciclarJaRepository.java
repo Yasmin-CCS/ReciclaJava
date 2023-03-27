@@ -10,7 +10,5 @@ public interface ReciclarJaRepository {
 	public void listarTodas();
 	
 	
-	// Métodos da Conta do cliente
-	public void sacar(float valor);
 
 }

@@ -11,7 +11,7 @@ public class ReciclarJaController implements ReciclarJaRepository {
 	
 	private ArrayList<Pessoa> listaClientes = new ArrayList<Pessoa>();
 
-	@Override
+	@Override// Localizar o CPF na ArrayList listaClientes
 	public void procurarPorCpf(String cpf) {
 		var pessoa = buscarNaCollection(cpf);
 		
@@ -22,14 +22,14 @@ public class ReciclarJaController implements ReciclarJaRepository {
 		
 	}
 
-	@Override
+	@Override // Método para puxar o cadastro
 	public void cadastrar(Pessoa pessoa) {
 		listaClientes.add(pessoa);
 		System.out.println("\n Cadastro feito com sucesso!");
 		
 	}
 
-	@Override
+	@Override // Listar todos os clientes
 	public void listarTodas() {
 		for (var pessoa: listaClientes) {
 			pessoa.visualizar();
@@ -37,12 +37,7 @@ public class ReciclarJaController implements ReciclarJaRepository {
 		
 	}
 
-	@Override
-	public void sacar(float valor) {
-		// TODO Auto-generated method stub
-		
-	}
-	
+	// Buscar cliente na ArrayList ListaClientes
 	public Pessoa buscarNaCollection(String cpf) {
 		for (var pessoa:listaClientes) {
 			if (pessoa.getCpf() == cpf) {
