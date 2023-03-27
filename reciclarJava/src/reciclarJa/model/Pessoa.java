@@ -6,7 +6,7 @@ public abstract class Pessoa {
 	private String cpf;
 	private float saldo;
 	
-	
+	// métodos construtor do objeto pessoa.
 	public Pessoa(String nome, String cpf, float saldo) {
 		super();
 		this.nome = nome;
@@ -56,14 +56,12 @@ public abstract class Pessoa {
 	}
 	
 	public boolean validarCpf() {
-		if (getCpf().length() != 11){
+		if (getCpf().length() != 11) {
 			System.out.println("\nCPF inválido!!");
 			return false;
 		}
 		return true;
 	}
-	
-	
 	
 	
 	public void visualizar() {
