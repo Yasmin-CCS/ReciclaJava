@@ -3,11 +3,11 @@ package reciclarJa.model;
 public abstract class Pessoa {
 	
 	private String nome;
-	private int cpf;
+	private String cpf;
 	private float saldo;
 	
 	
-	public Pessoa(String nome, int cpf, float saldo) {
+	public Pessoa(String nome, String cpf, float saldo) {
 		super();
 		this.nome = nome;
 		this.cpf = cpf;
@@ -25,12 +25,12 @@ public abstract class Pessoa {
 	}
 
 
-	public int getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 
 
-	public void setCpf(int cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
@@ -54,6 +54,15 @@ public abstract class Pessoa {
 		this.setSaldo(this.getSaldo() - valor);
 		return true;
 	}
+	
+	public boolean validarCpf() {
+		if (getCpf().length() != 11){
+			System.out.println("\nCPF inválido!!");
+			return false;
+		}
+		return true;
+	}
+	
 	
 	
 	

@@ -12,7 +12,7 @@ public class ReciclarJaController implements ReciclarJaRepository {
 	private ArrayList<Pessoa> listaClientes = new ArrayList<Pessoa>();
 
 	@Override
-	public void procurarPorCpf(int cpf) {
+	public void procurarPorCpf(String cpf) {
 		var pessoa = buscarNaCollection(cpf);
 		
 		if(pessoa != null)
@@ -43,7 +43,7 @@ public class ReciclarJaController implements ReciclarJaRepository {
 		
 	}
 	
-	public Pessoa buscarNaCollection(int cpf) {
+	public Pessoa buscarNaCollection(String cpf) {
 		for (var pessoa:listaClientes) {
 			if (pessoa.getCpf() == cpf) {
 				return pessoa;	
