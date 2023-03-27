@@ -14,18 +14,14 @@ public class Menu {
 	static ArrayList<Compra> compras = new ArrayList();
 
 	public static void main(String[] args) {
-		Material papel = new Material("Papel", (float) 0.05);
+		Material papel = new Material("Papel", (float) 0.60);
 		Material plastico = new Material("Plástico", (float) 0.10);
 		Material vidro = new Material("Vidro", (float) 0.15);
-		Material metal = new Material("Metal", (float) 0.20);
-		Material organico = new Material("Orgânico", (float) 0.25);
-		Material naoReciclavel = new Material("Não reciclável", (float) 0.30);
+		Material metal = new Material("Metal", (float) 0.20);		
 		materiais.add(papel);
 		materiais.add(plastico);
 		materiais.add(vidro);
 		materiais.add(metal);
-		materiais.add(organico);
-		materiais.add(naoReciclavel);
 		String nomeCliente = menuPrimario(input);
 		int escolher = menuSecundário(input, nomeCliente);
 		menuMaterias(escolher);
@@ -95,9 +91,9 @@ public class Menu {
 		keyPress();
 	}
 
-	public static void menuMaterias(int opcao) {
+	public static float menuMaterias(int opcao) {
 		int escolha = 0;
-
+		float saldo = 0;
 		if (opcao == 2) {
 			while (escolha < 1 || escolha > 6) {
 				System.out.println(" ================================================================================");
@@ -107,28 +103,36 @@ public class Menu {
 				System.out.println(" ||                             Menu de Materiais                              ||");
 				System.out.println(" ||                                                                            ||");
 				System.out.println(" ||============================================================================||");
-				System.out.println(" ||       (1) Papel   ||          (2) Plástico          || (3) Vidro           ||");
+				System.out.println(" ||                  (1) Papel       ||        (2) Plástico                    ||");
 				System.out.println(" ||============================================================================||");
-				System.out.println(" ||       (4) Metal   ||          (5) Orgânico          || (6) Não Reciclável  ||");
+				System.out.println(" ||                  (3) Vidro       ||        (4) Metal                       ||");
 				System.out.println(" ||============================================================================||");
 				System.out.println(" ||                          Digite a opção desejada :                         ||");
 				System.out.println(" ================================================================================");
-				escolha = input.nextInt();
-				if (escolha < 1 || escolha > 6) {
+				try {
+					escolha = input.nextInt();
+				} catch (InputMismatchException e) {
+					System.out.println("Por favor, digite números inteiros! ");
+					input.nextLine();
+					escolha = 0;
+				}
+				if (escolha < 1 || escolha > 4) {
 					System.out.println("Opção inválida, por favor,digite novamente");
 				} else {
 					materiais.get(escolha - 1).visualizar();
 					System.out.println("Qual o peso que deseja reciclar? ");
 					float peso = input.nextFloat();
-					Compra um = new Compra(materiais.get(escolha - 1), peso);
-					compras.add(um);
-					um.valorCompra();
-					um.ver();
+					Compra novaCompra = new Compra(materiais.get(escolha - 1), peso);
+					saldo += novaCompra.valorCompra();
+					compras.add(novaCompra);
+					novaCompra.valorCompra();
+					novaCompra.ver();
 				}
 
 			}
 		}
 		keyPress();
+		return saldo;
 	}
 
 	public static void keyPress() {

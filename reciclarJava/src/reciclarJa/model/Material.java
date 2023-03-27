@@ -34,7 +34,7 @@ public class Material {
 	public void visualizar() {
 
 		System.out.println("O material " + this.material);
-		System.out.println("O preço do material é de: " + this.preco);
+		System.out.println("O preço do material(por kg) é de: " + this.preco);
 
 	}
 }
