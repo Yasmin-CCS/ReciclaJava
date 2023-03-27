@@ -6,7 +6,10 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 import reciclarJa.model.Material;
+import reciclarJa.controller.ReciclarJaController;
 import reciclarJa.model.Compra;
+import reciclarJa.model.Pessoa;
+
 
 public class Menu {
 	static ArrayList<Material> materiais = new ArrayList();
@@ -14,6 +17,9 @@ public class Menu {
 	static ArrayList<Compra> compras = new ArrayList();
 
 	public static void main(String[] args) {
+		
+		ReciclarJaController contas = new ReciclarJaController();
+		
 		Material papel = new Material("Papel", (float) 0.05);
 		Material plastico = new Material("Plástico", (float) 0.10);
 		Material vidro = new Material("Vidro", (float) 0.15);
