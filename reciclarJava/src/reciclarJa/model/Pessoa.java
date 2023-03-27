@@ -1,49 +1,71 @@
 package reciclarJa.model;
 
-public class Pessoa {
+public abstract class Pessoa {
+	
 	private String nome;
-	private String email;
 	private int cpf;
-	private String contato;
-
-	public Pessoa(String nome, String email, int cpf, String contato) {
+	private float saldo;
+	
+	
+	public Pessoa(String nome, int cpf, float saldo) {
+		super();
 		this.nome = nome;
-		this.email = email;
 		this.cpf = cpf;
-		this.contato = contato;
-
+		this.saldo = saldo;
 	}
+
 
 	public String getNome() {
 		return nome;
 	}
 
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
 
 	public int getCpf() {
 		return cpf;
 	}
 
+
 	public void setCpf(int cpf) {
 		this.cpf = cpf;
 	}
 
-	public String getContato() {
-		return contato;
+
+	public float getSaldo() {
+		return saldo;
 	}
 
-	public void setContato(String contato) {
-		this.contato = contato;
+
+	public void setSaldo(float saldo) {
+		this.saldo = saldo;
 	}
+	
+	
+	public boolean sacar(float valor) {
+		if (this.getSaldo() < valor) {
+			System.out.println("\nSaldo insuficiente!");
+			return false;
+		}
+		
+		this.setSaldo(this.getSaldo() - valor);
+		return true;
+	}
+	
+	
+	
+	public void visualizar() {
+		System.out.println("Nome: "+this.getNome());
+		System.out.println("CPF: "+this.getCpf());
+		System.out.println("Saldo disponível: "+this.getSaldo());
+	}
+	
+	
+	
+	
+
 
 }
