@@ -168,7 +168,10 @@ public class Menu {
 	}
 
 	public static void menuAdicionar(String nome, float saldo,float saldoNovo) {
-		int escolher;
+		int escolher = 0;
+		
+		while(escolher != 1 && escolher != 2 && escolher != 3) {
+			
 		System.out.println(Cores.TEXT_GREEN + Cores.ANSI_BLACK_BACKGROUND + "=======================================================");
 		System.out.println("||                                                   ||");
 		System.out.println("||       (1) Continuar adicionando materiais         ||");
@@ -200,11 +203,14 @@ public class Menu {
 		} else {
 			naoValido();
 		}
-
+		}
 	}
 
 	public static void menuDoacao(float saldo, String nome,float saldoNovo) {
-		int validacao;
+		int validacao = 0;
+		while(validacao != 1 && validacao != 2) {
+			
+		
 		System.out.println(
 				Cores.TEXT_GREEN + Cores.ANSI_BLACK_BACKGROUND + "===============================================================================================================================");
 		System.out.println(
@@ -239,10 +245,15 @@ public class Menu {
 		} else if (validacao == 2) {
 			menuAdicionar(nome, saldo,saldoNovo);
 		}
+		}
 	}
 
 	public static void qtdCreditos(float saldo, String nome,float saldoNovo) {
-		int escolha;
+		int escolha = 0;
+		
+		while (escolha != 1 && escolha != 2 ) {
+			
+		
 		System.out.println(Cores.TEXT_GREEN + Cores.ANSI_BLACK_BACKGROUND + "=======================================================");
 		System.out.println("||                                                   ||");
 		System.out.println("||         Quantidade de créditos: " + saldo + "               ||");
@@ -276,10 +287,11 @@ public class Menu {
 		} else {
 			naoValido();
 		}
+		}
 	}
 
 	public static void digiteNumeros() {
-		System.out.println(Cores.ANSI_BLACK_BACKGROUND + Cores.TEXT_RED + "Por favor, digite números inteiros! " + Cores.TEXT_RESET);
+		System.out.println(Cores.ANSI_BLACK_BACKGROUND + Cores.TEXT_RED + "\nPor favor, digite números inteiros! \n" + Cores.TEXT_RESET);
 	}
 
 	public static void naoValido() {

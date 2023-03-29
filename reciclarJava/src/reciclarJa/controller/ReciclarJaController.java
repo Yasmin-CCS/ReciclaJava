@@ -83,7 +83,9 @@ public class ReciclarJaController implements ReciclarJaRepository {
 
 	public void casoCreditoNaoCpf(Pessoa pessoa, float saldo) {
 		int opcao = 0;
-
+		while(opcao != 1 && opcao != 2) {
+			
+		
 		System.out.println(
 				Cores.TEXT_GREEN + Cores.ANSI_BLACK_BACKGROUND + "============================================================================================");
 		System.out.println(
@@ -103,7 +105,7 @@ public class ReciclarJaController implements ReciclarJaRepository {
 			opcao = leia.nextInt();
 			System.out.println("" + Cores.TEXT_RESET);
 		} catch (InputMismatchException e) {
-			System.out.println(Cores.TEXT_RED + Cores.ANSI_BLACK_BACKGROUND + "Por favor, digite números inteiros! " + Cores.TEXT_RESET);
+			System.out.println(Cores.TEXT_RED + Cores.ANSI_BLACK_BACKGROUND + "\nPor favor, digite números inteiros! \n" + Cores.TEXT_RESET);
 			leia.nextLine();
 			opcao = 0;
 		}
@@ -111,11 +113,12 @@ public class ReciclarJaController implements ReciclarJaRepository {
 		if (opcao == 1) {
 			cadastroPessoa(pessoa, saldo);
 		} else if (opcao == 2) {
+			menu.menuDoacao(saldo, nome, saldo);
 			return;
 		} else {
 			System.out.println(Cores.TEXT_RED + Cores.ANSI_BLACK_BACKGROUND + "Opção inválida" + Cores.TEXT_RESET);
 		}
-
+		}
 	}
 
 	public void cadastroPessoa(Pessoa pessoa, float saldo) {
