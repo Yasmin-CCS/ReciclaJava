@@ -1,5 +1,7 @@
 package reciclarJa.model;
 
+import reciclarJa.util.Cores;
+
 public class Compra {
 	
 	private Material material;
@@ -32,6 +34,6 @@ public class Compra {
 		return valor;
 	}
 	public void ver() {
-		System.out.println("O valor da compra é de : " + this.valorCompra());
+		System.out.println(Cores.ANSI_BLACK_BACKGROUND + Cores.TEXT_WHITE +"O valor da compra é de : " + this.valorCompra() + Cores.TEXT_RESET);
 	}
 }

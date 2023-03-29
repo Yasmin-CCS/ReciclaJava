@@ -2,7 +2,7 @@ package reciclarJa.util;
 
 public class Cores {
 	// reseta a cor padrão
-	public static final String TEXT_RESET = "\u001B[n";
+	public static final String TEXT_RESET = "\u001B[m";
 
 	// colore o texto
 	public static final String TEXT_BLACK = "\u001B[30m";

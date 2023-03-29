@@ -6,6 +6,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 import reciclarJa.model.Pessoa;
 import reciclarJa.repository.ReciclarJaRepository;
+import reciclarJa.util.Cores;
 import reciclarJa.Menu;
 
 public class ReciclarJaController implements ReciclarJaRepository {
@@ -18,11 +19,15 @@ public class ReciclarJaController implements ReciclarJaRepository {
 
 	// ler o cpf para validar
 	public String lerCpf() {
-		System.out.println("Digite seu CPF: ");
+		System.out.println(Cores.ANSI_BLACK_BACKGROUND + Cores.TEXT_WHITE + "Digite seu CPF: " + Cores.TEXT_RESET);
+		System.out.println("" + Cores.ANSI_BLACK_BACKGROUND  + Cores.TEXT_YELLOW);
 		cpf = leia.nextLine();
+		System.out.println("" + Cores.TEXT_RESET);
 		while (validarCpf() == false) {
 			System.out.println("CPF inválido!! Digite novamente: ");
+			System.out.println("" + Cores.ANSI_BLACK_BACKGROUND  + Cores.TEXT_YELLOW);
 			cpf = leia.nextLine();
+			System.out.println("" + Cores.TEXT_RESET);
 
 		}
 		return cpf;
@@ -50,7 +55,7 @@ public class ReciclarJaController implements ReciclarJaRepository {
 	@Override // Método para puxar o cadastro
 	public void cadastrar(Pessoa pessoa) {
 		listaClientes.add(pessoa);
-		System.out.println("\n Cadastro feito com sucesso!");
+		System.out.println(Cores.TEXT_GREEN + Cores.ANSI_BLACK_BACKGROUND + "\n Cadastro feito com sucesso! \n" + Cores.TEXT_RESET);
 
 	}
 
@@ -80,7 +85,7 @@ public class ReciclarJaController implements ReciclarJaRepository {
 		int opcao = 0;
 
 		System.out.println(
-				"============================================================================================");
+				Cores.TEXT_GREEN + Cores.ANSI_BLACK_BACKGROUND + "============================================================================================");
 		System.out.println(
 				"||                                                                                        ||");
 		System.out.println(
@@ -92,11 +97,13 @@ public class ReciclarJaController implements ReciclarJaRepository {
 		System.out.println(
 				"||                                                                                        ||");
 		System.out.println(
-				"============================================================================================");
+				"============================================================================================"+ Cores.TEXT_RESET);
 		try {
+			System.out.println("" + Cores.ANSI_BLACK_BACKGROUND  + Cores.TEXT_YELLOW);
 			opcao = leia.nextInt();
+			System.out.println("" + Cores.TEXT_RESET);
 		} catch (InputMismatchException e) {
-			System.out.println("Por favor, digite números inteiros! ");
+			System.out.println(Cores.TEXT_RED + Cores.ANSI_BLACK_BACKGROUND + "Por favor, digite números inteiros! " + Cores.TEXT_RESET);
 			leia.nextLine();
 			opcao = 0;
 		}
@@ -106,19 +113,23 @@ public class ReciclarJaController implements ReciclarJaRepository {
 		} else if (opcao == 2) {
 			return;
 		} else {
-			System.out.println("Opção inválida");
+			System.out.println(Cores.TEXT_RED + Cores.ANSI_BLACK_BACKGROUND + "Opção inválida" + Cores.TEXT_RESET);
 		}
 
 	}
 
 	public void cadastroPessoa(Pessoa pessoa, float saldo) {
 		float novoSaldo = 0;
-		System.out.println("Digite seu nome : ");
+		System.out.println(Cores.ANSI_BLACK_BACKGROUND + Cores.TEXT_WHITE +"Digite seu nome : " + Cores.TEXT_RESET);
 		leia.nextLine();
+		System.out.println("" + Cores.ANSI_BLACK_BACKGROUND  + Cores.TEXT_YELLOW);
 		String nome = leia.nextLine();
-		System.out.println("Digite seu cpf :");
+		System.out.println("" + Cores.TEXT_RESET);
+		System.out.println(Cores.ANSI_BLACK_BACKGROUND + Cores.TEXT_WHITE +"Digite seu cpf :"+ Cores.TEXT_RESET);
+		System.out.println("" + Cores.ANSI_BLACK_BACKGROUND  + Cores.TEXT_YELLOW);
 		leia.nextLine();
 		String cpf = leia.nextLine();
+		System.out.println("" + Cores.TEXT_RESET);
 		pessoa = new Pessoa(nome, cpf, menu.saldoPessoa(saldo));	
 		cadastrar(pessoa);
 		menu.menuMaterias(nome,novoSaldo);
