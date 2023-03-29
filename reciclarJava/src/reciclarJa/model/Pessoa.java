@@ -1,6 +1,6 @@
 package reciclarJa.model;
 
-public abstract class Pessoa {
+public class Pessoa {
 	
 	private String nome;
 	private String cpf;
@@ -65,9 +65,9 @@ public abstract class Pessoa {
 	
 	
 	public void visualizar() {
-		System.out.println("Nome: "+this.getNome());
-		System.out.println("CPF: "+this.getCpf());
-		System.out.println("Saldo disponível: "+this.getSaldo());
+		System.out.println("Nome: "+this.nome);
+		//System.out.println("CPF: "+this.cpf);
+		System.out.println("Saldo disponível: "+this.saldo);
 	}
 	
 	
