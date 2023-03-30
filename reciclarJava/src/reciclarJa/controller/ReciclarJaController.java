@@ -48,7 +48,8 @@ public class ReciclarJaController implements ReciclarJaRepository {
 		if (pessoa != null) {
 			pessoa.visualizar();
 		} else {
-			casoCreditoNaoCpf(pessoa, saldo);
+			System.out.println("Cadastro não encontrado!");
+			menu.casoCreditoNaoCpf(null, saldo, cpf, cpf);
 		}
 	}
 
@@ -77,66 +78,6 @@ public class ReciclarJaController implements ReciclarJaRepository {
 		return null;
 	}
 
-	public void naoDoar(int validacao, String nome,float saldo) {
-		menu.menuCredito(validacao, nome,saldo);
-	}
 
-	public void casoCreditoNaoCpf(Pessoa pessoa, float saldo) {
-		int opcao = 0;
-		while(opcao != 1 && opcao != 2) {
-			
-		
-		System.out.println(
-				Cores.TEXT_GREEN + Cores.ANSI_BLACK_BACKGROUND + "============================================================================================");
-		System.out.println(
-				"||                                                                                        ||");
-		System.out.println(
-				"||                            O CPF não possui cadastro!                                  ||");
-		System.out.println(
-				"||           Para creditar, precisamos cadastrar seu CPF, deseja continuar?               ||");
-		System.out.println(
-				"||                               (1) Sim    |    (2) Não                                  ||");
-		System.out.println(
-				"||                                                                                        ||");
-		System.out.println(
-				"============================================================================================"+ Cores.TEXT_RESET);
-		try {
-			System.out.println("" + Cores.ANSI_BLACK_BACKGROUND  + Cores.TEXT_YELLOW);
-			opcao = leia.nextInt();
-			System.out.println("" + Cores.TEXT_RESET);
-		} catch (InputMismatchException e) {
-			System.out.println(Cores.TEXT_RED + Cores.ANSI_BLACK_BACKGROUND + "\nPor favor, digite números inteiros! \n" + Cores.TEXT_RESET);
-			leia.nextLine();
-			opcao = 0;
-		}
-
-		if (opcao == 1) {
-			cadastroPessoa(pessoa, saldo);
-		} else if (opcao == 2) {
-			menu.menuDoacao(saldo, nome, saldo);
-			return;
-		} else {
-			System.out.println(Cores.TEXT_RED + Cores.ANSI_BLACK_BACKGROUND + "Opção inválida" + Cores.TEXT_RESET);
-		}
-		}
-	}
-
-	public void cadastroPessoa(Pessoa pessoa, float saldo) {
-		float novoSaldo = 0;
-		System.out.println(Cores.ANSI_BLACK_BACKGROUND + Cores.TEXT_WHITE +"Digite seu nome : " + Cores.TEXT_RESET);
-		leia.nextLine();
-		System.out.println("" + Cores.ANSI_BLACK_BACKGROUND  + Cores.TEXT_YELLOW);
-		String nome = leia.nextLine();
-		System.out.println("" + Cores.TEXT_RESET);
-		System.out.println(Cores.ANSI_BLACK_BACKGROUND + Cores.TEXT_WHITE +"Digite seu cpf :"+ Cores.TEXT_RESET);
-		System.out.println("" + Cores.ANSI_BLACK_BACKGROUND  + Cores.TEXT_YELLOW);
-		leia.nextLine();
-		String cpf = leia.nextLine();
-		System.out.println("" + Cores.TEXT_RESET);
-		pessoa = new Pessoa(nome, cpf, menu.saldoPessoa(saldo));	
-		cadastrar(pessoa);
-		menu.menuMaterias(nome,novoSaldo);
-		// TODO levar para a próxima tela...
-	}
 
 }

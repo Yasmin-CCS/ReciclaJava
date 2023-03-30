@@ -66,7 +66,7 @@ public class Pessoa {
 	
 	public void visualizar() {
 		System.out.println("Nome: "+this.nome);
-		//System.out.println("CPF: "+this.cpf);
+		System.out.println("CPF: "+this.cpf);
 		System.out.println("Saldo disponível: "+this.saldo);
 	}
 	
