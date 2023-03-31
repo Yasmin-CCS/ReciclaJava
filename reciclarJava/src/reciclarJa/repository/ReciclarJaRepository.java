@@ -1,13 +1,12 @@
 package reciclarJa.repository;
 
-import reciclarJa.model.Pessoa;
+import reciclarJa.model.Cliente;
 
 public interface ReciclarJaRepository {
 	
 	// CRUD conta do cliente
-	public void cadastrar(Pessoa pessoa);
+	public void cadastrar(Cliente pessoa);
 	public void listarTodas();
-	public void procurarPorCpf(String cpf, float saldo);
 	
 	
 
