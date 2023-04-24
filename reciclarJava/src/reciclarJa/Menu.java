@@ -35,12 +35,13 @@ public class Menu {
 			return pessoa;
 		}
 		return pessoa;
+
 	}
 
 	private static String lerNome() {
 		String nome = "";
 		while (nome.isEmpty()) {
-			System.out.println("\n" + Cores.TEXT_GREEN + Cores.ANSI_BLACK_BACKGROUND
+			System.out.println("\n" + Cores.TEXT_GREEN
 					+ " ================================================================================");
 			System.out.println(" ||============================================================================||");
 			System.out.println(" ||                                                                            ||");
@@ -61,11 +62,11 @@ public class Menu {
 	private static String lerCpf() {
 		String cpf = "";
 		while (cpf.isEmpty()) {
-			System.out.println("\n" + Cores.TEXT_GREEN + Cores.ANSI_BLACK_BACKGROUND
+			System.out.println("\n" + Cores.TEXT_GREEN
 					+ " ================================================================================");
 			System.out.println(" ||============================================================================||");
 			System.out.println(" ||                                                                            ||");
-			System.out.println(" ||                      Bem vinde ao ReciclarJá                               ||");
+			System.out.println(" ||                     Bem vinde ao ReciclaJá(va) !!                          ||");
 			System.out.println(" ||                                                                            ||");
 			System.out.println(" ||============================================================================||");
 			System.out.println(" ||                                                                            ||");
@@ -99,12 +100,11 @@ public class Menu {
 
 		while (escolher != 1 && escolher != 2 && escolher != 3 && escolher != 4) {
 
-			System.out.println(Cores.TEXT_GREEN + Cores.ANSI_BLACK_BACKGROUND
-					+ "=======================================================");
-			System.out.println("||                                                   ||");
-			System.out.println("||          Seja Bem Vinde ao RecilarJá              ||");
-			System.out.println("||             " + cliente.getNome() + "               ||");
-			System.out.println("||                                                   ||");
+			System.out.println(Cores.TEXT_GREEN + "=======================================================");
+			System.out.println("                                                       ");
+			System.out.println("              Olá, " + cliente.getNome() + "           ");
+			System.out.println("            Seja Bem Vinde ao ReciclaJá(va)           ");
+			System.out.println("                                                       ");
 			System.out.println("=======================================================");
 			System.out.println("||       (1) Vender seus recicláveis                 ||");
 			System.out.println("||       (2) Deseja doar                             ||");
@@ -130,10 +130,9 @@ public class Menu {
 				visualizarContas(cliente);
 			} else if (escolher == 4) {
 				input.close();
-				System.out.println(Cores.TEXT_GREEN + Cores.ANSI_BLACK_BACKGROUND
-						+ "============================================================");
+				System.out.println(Cores.TEXT_GREEN + "============================================================");
 				System.out.println("||                                                        ||");
-				System.out.println("||        A ReciclarJá agradece sua participação          ||");
+				System.out.println("||        A ReciclaJá(va) agradece sua participação       ||");
 				System.out.println("||                                                        ||");
 				System.out.println("============================================================" + Cores.TEXT_RESET);
 				System.exit(0);
@@ -146,20 +145,26 @@ public class Menu {
 	public static void menuMaterias(Cliente cliente) {
 		int escolha = 0;
 		while (escolha < 1 || escolha > 4) {
-			System.out.println(Cores.TEXT_GREEN + Cores.ANSI_BLACK_BACKGROUND
+			System.out.println(Cores.TEXT_GREEN
 					+ " ================================================================================");
+			System.out.println(" ================================================================================");
+			System.out.println("                                                                               ");
+			System.out.println("           " + Cores.TEXT_PURPLE_BRIGHT + "            Bem vinde ao ReciclaJá(va), "
+					+ cliente.getNome());
+			System.out.println("                                                                               ");
+			System.out.println("                             Menu de Materiais       " + Cores.TEXT_GREEN);
+			System.out.println("                                                                               ");
 			System.out.println(" ||============================================================================||");
-			System.out.println(" ||                                                                            ||");
-			System.out.println(" ||                          Bem vinde ao ReciclarJá, " + cliente.getNome()
-					+ "                     ||");
-			System.out.println(" ||                             Menu de Materiais                              ||");
-			System.out.println(" ||                                                                            ||");
+			System.out.println(" ||                  " + Cores.TEXT_BLUE_BOLD_BRIGHT + "(1) Papel   " + Cores.TEXT_GREEN
+					+ "    ||" + Cores.TEXT_RED_BOLD_BRIGHT + "      (2) Plástico    " + Cores.TEXT_GREEN
+					+ "                  ||");
 			System.out.println(" ||============================================================================||");
-			System.out.println(" ||                  (1) Papel       ||        (2) Plástico                    ||");
+			System.out.println(" ||                  " + Cores.TEXT_GREEN_BOLD_BRIGHT + "(3) Vidro  " + Cores.TEXT_GREEN
+					+ "     ||" + Cores.TEXT_YELLOW_BOLD + "      (4) Metal " + Cores.TEXT_GREEN
+					+ "                        ||");
 			System.out.println(" ||============================================================================||");
-			System.out.println(" ||                  (3) Vidro       ||        (4) Metal                       ||");
-			System.out.println(" ||============================================================================||");
-			System.out.println(" ||                          Digite a opção desejada :                         ||");
+			System.out.println(" ||          " + Cores.TEXT_PURPLE_BRIGHT
+					+ "                Digite a opção desejada :      " + Cores.TEXT_GREEN + "                   ||");
 			System.out.println(" ================================================================================"
 					+ Cores.TEXT_RESET);
 			try {
@@ -195,10 +200,11 @@ public class Menu {
 		String cpf = "";
 		while (escolha != 1 && escolha != 2) {
 
-			System.out.println(Cores.TEXT_GREEN + Cores.ANSI_BLACK_BACKGROUND
-					+ "=======================================================");
-			System.out.println("||                                                   ||");
-			System.out.println("||         Quantidade de créditos: " + cliente.getSaldo() + "               ||");
+			System.out.println(Cores.TEXT_GREEN + "=======================================================");
+			System.out.println("                                                       ");
+			System.out.println("         Quantidade de créditos: " + cliente.getSaldo() + "               ");
+			System.out.println("                                                       ");
+			System.out.println("||===================================================||");
 			System.out.println("||        (1) Doar           // (2) Deseja voltar?   ||");
 			System.out.println("||                                                   ||");
 			System.out.println("=======================================================" + Cores.TEXT_RESET);
@@ -225,7 +231,7 @@ public class Menu {
 		int validacao = 0;
 		while (validacao != 1 && validacao != 2) {
 
-			System.out.println(Cores.TEXT_GREEN + Cores.ANSI_BLACK_BACKGROUND
+			System.out.println(Cores.TEXT_GREEN
 					+ "===============================================================================================================================");
 			System.out.println(
 					"||                                                                                                                           ||");
@@ -248,12 +254,14 @@ public class Menu {
 				validacao = 0;
 			}
 			if (validacao == 1) {
-				System.out.println(Cores.TEXT_GREEN + Cores.ANSI_BLACK_BACKGROUND
-						+ "============================================================");
+				System.out.println(Cores.TEXT_GREEN + "============================================================");
 				System.out.println("||                                                        ||");
-				System.out.println("||         A Recicle já agradece a sua doação!            ||");
-				System.out.println("            O valor doado foi de: " + cliente.getSaldo() + "                     ");
+				System.out.println("||         A ReciclaJá(va) agradece a sua doação!         ||");
 				System.out.println("||                                                        ||");
+				System.out.println("============================================================");
+				System.out.println("                                                            ");
+				System.out.println("               O valor doado foi de: " + cliente.getSaldo());
+				System.out.println("                                                            ");
 				System.out.println("============================================================" + Cores.TEXT_RESET);
 				cliente.setSaldo(0);
 				keyPress();
@@ -265,13 +273,14 @@ public class Menu {
 	}
 
 	public static void visualizarContas(Cliente cliente) {
-		System.out.println(Cores.ANSI_BLACK_BACKGROUND + Cores.TEXT_WHITE + "Digite o seu CPF: "+Cores.TEXT_RESET);
+		System.out.println(Cores.ANSI_BLACK_BACKGROUND + Cores.TEXT_WHITE + "Digite o seu CPF: " + Cores.TEXT_RESET);
 		input.nextLine();
 		System.out.println(Cores.TEXT_YELLOW + Cores.ANSI_BLACK_BACKGROUND);
 		String cpf = input.nextLine();
 		System.out.println(Cores.TEXT_RESET);
 		if (Objects.isNull(pessoas.buscarNaCollection(cpf))) {
-			System.out.println(Cores.ANSI_BLACK_BACKGROUND + Cores.TEXT_RED + "Esse CPF não está cadastrado!\n"+ Cores.TEXT_RESET);
+			System.out.println(Cores.ANSI_BLACK_BACKGROUND + Cores.TEXT_RED + "Esse CPF não está cadastrado!\n"
+					+ Cores.TEXT_RESET);
 			menuPrincipal(cliente);
 		} else {
 			cliente.visualizar();

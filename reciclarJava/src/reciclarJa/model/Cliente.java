@@ -67,7 +67,7 @@ public class Cliente {
 	
 	
 	public void visualizar() {
-		System.out.println(Cores.ANSI_BLACK_BACKGROUND + Cores.TEXT_GREEN);
+		System.out.println(Cores.TEXT_GREEN);
 		System.out.println("Nome: "+this.nome);
 		System.out.println("CPF: "+this.cpf);
 		System.out.println("Saldo disponível: "+this.saldo + "\n" + Cores.TEXT_RESET);
