@@ -13,6 +13,7 @@ RECICLAJÁ(VA)
     <img src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white" alt="Frame-1.png" border="0" />
 </h1>
 
+<br>
 
 ## 🌱 Sobre o Projeto
 
@@ -26,8 +27,8 @@ Nossa aplicação foi pensada estimular todos que tem dificuldade de colocar ess
 Nosso grupo criou um sistema para incentivar a reciclagem no dia a dia das pessoas através de terminais de autoatendimento para descartar objetos recicláveis como garrafas pet, latas, embalagens de papel, etc.
 
 O usuário será recompensado com créditos e descontos que poderão ser utilizados em espaços culturais como teatro, cinema, shows, ou ainda doados para projetos com causas ambientais,
--
 
+<br>
 
 ## 💻 Aplicamos conceitos de:
 
