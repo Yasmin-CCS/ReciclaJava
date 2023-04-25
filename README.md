@@ -3,7 +3,7 @@ RECICLAJÁ(VA)
 </p>
 
 <h1 align="center">
-    <img alt="GetSet recicla" href="#" src="https://media.licdn.com/dms/image/D4D16AQFUSrnRgnGQzg/profile-displaybackgroundimage-shrink_350_1400/0/1680305366638?e=1685577600&v=beta&t=W7pE6f45GuZ-JxWkTaD1VNSD8SZ09XIQyukAvslYJBQ" />
+    <img src="https://www.imagemhost.com.br/images/2023/04/25/Frame-1.png" alt="Frame-1.png" border="0" />
 </h1>
 
 <h4 align="center">🌲  PROJETO RECICLAJÁ(VA) 🌲</h4>
