@@ -8,7 +8,10 @@ RECICLAJÁ(VA)
 
 <h4 align="center">🌲  PROJETO RECICLAJÁ(VA) 🌲</h4>
 
-![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white&align=center)
+
+<h1 align="center">
+    <img src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white" alt="Frame-1.png" border="0" />
+</h1>
 
 
 ## 🌱 Sobre o Projeto
