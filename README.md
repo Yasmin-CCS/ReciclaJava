@@ -27,8 +27,10 @@ Nosso grupo criou um sistema para incentivar a reciclagem no dia a dia das pesso
 
 O usuário será recompensado com créditos e descontos que poderão ser utilizados em espaços culturais como teatro, cinema, shows, ou ainda doados para projetos com causas ambientais,
 -
----
-Aplicamos conceitos de: 
+
+
+## 💻 Aplicamos conceitos de:
+
 - Laços Condicionais
 - Laços de Repetição
 - Métodos e Modificadores de acesso
