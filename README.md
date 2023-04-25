@@ -57,8 +57,10 @@ O usuário será recompensado com créditos e descontos que poderão ser utiliza
   </tr>
 </table>
 
+<br>
+
 ## 💪 Como contribuir para o projeto
 
 1. Faça sua doação 
 2. Divulge a causa 
-3.Contribua para o meio ambiente
+3. Contribua para o meio ambiente
